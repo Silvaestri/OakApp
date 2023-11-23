@@ -22,7 +22,7 @@ struct ContentView: View {
                 ScrollView(.horizontal){
                     LazyHStack{
                         ZStack{
-                            Image("b1")
+                            Image("first choice")
                                 .resizable()
                                 .frame(width: 100, height: 150)
                                 .cornerRadius(15)
@@ -34,7 +34,7 @@ struct ContentView: View {
                                 .padding(.top, 100)
                         }
                         ZStack{
-                            Image("b2")
+                            Image("second choice")
                                 .resizable()
                                 .frame(width: 100, height: 150)
                                 .cornerRadius(15)
@@ -46,11 +46,12 @@ struct ContentView: View {
                                 .padding(.top, 100)
                         }
                         ZStack{
-                            Image("b3")
+                            Image("third choice")
                                 .resizable()
                                 .frame(width: 100, height: 150)
                                 .cornerRadius(15)
                                 .padding(.horizontal, 5)
+//                                .accessibilityHint("Image")
                             Text("Awake")
                                 .foregroundColor(.white)
                                 .font(.subheadline)
@@ -128,6 +129,7 @@ struct ContentView: View {
                 Divider()
                 Slider(value: $sliderValue, in: 0...2, step: 1)
                     .padding()
+                    .accessibilityValue("setting slider to\(Int(sliderValue + 1))")
                 Divider()
             }
             .background(
